@@ -22,7 +22,8 @@ class User:
         '''
         Method that checks if a user exists from the user list.
         Args:
-            number: Phone number to search if it exists
+            username: username to search if it exists
+            password: password to search if it exists
         Returns :
             Boolean: True or false depending if the user exists
         '''

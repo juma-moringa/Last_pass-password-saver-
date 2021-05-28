@@ -20,7 +20,7 @@ class TestUser(unittest.TestCase):
         """
 
         self.assertEqual(self.new_user.username,"Ajaylee")
-        self.assertEqual(self.new_user.password,"ajay254")
+        self.assertEqual(self.new_user.password,"jay254")
 
 #SECOND TEST save the created accounts details.
 
@@ -41,7 +41,7 @@ class TestUser(unittest.TestCase):
         test_user = User("Ajaylee254","ajay254") # new user
         test_user.save_user()
 
-        user_exists = User.user_exist("Ajaylee254","ajay254")
+        user_exists = User.user_exist("Ajaylee254","jay254")
 
         self.assertTrue(user_exists)
 
