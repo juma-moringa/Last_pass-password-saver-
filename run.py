@@ -29,5 +29,28 @@ def main():
     print("Please enter your Password:") 
     password =input()
 
+def main():    
+    print("Hello, Welcome to PassworLocker. Create an account to save your passwords")
+    print('Enter your username')
+    username = input()
+    print("What's your password")
+    password = input()
+    print("Confirm password ....")
+    confirm_password = input()
+    
+    while confirm_password != password:
+                print("Password did not match")
+                print("password ....")
+                password = input()
+                print("Confirm password ....")
+    else:
+                save_user(create_user(username, password))
+                print(f'Congratulations 🎉, New Account has been created for: {username} using password: {password}')
+                print("proceed to login")
+                print("username")
+                entered_first_name = input()
+                print("your password")
+                entered_password = input()            
+
 if __name__ == '__main__':
     main()    
