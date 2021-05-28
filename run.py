@@ -7,3 +7,9 @@ def create_user(username, password):
     '''
     new_user = User(username, password)
     return new_user
+
+def save_user(User):
+    '''
+    Function to save contact
+    '''
+    User.save_user()
