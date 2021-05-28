@@ -12,7 +12,7 @@ class TestUser(unittest.TestCase):
         this method allows us to define instructions that will be executed before each test
         """
 
-        self.new_user = User("Ajaylee", "ajay254")
+        self.new_user = User("Ajaylee", "jay254")
 
     def test_init(self):
         """
@@ -38,7 +38,7 @@ class TestUser(unittest.TestCase):
         '''    
 
         self.new_user.save_user()
-        test_user = User("Ajaylee254","ajay254") # new user
+        test_user = User("Ajaylee254","jay254") # new user
         test_user.save_user()
 
         user_exists = User.user_exist("Ajaylee254","jay254")
