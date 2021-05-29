@@ -158,7 +158,7 @@ def main():
                         ac - add credential,
                         lc - list credentials, 
                         dl - delete credential,
-                        ex - exit
+                        ex - exit.
 
                         ''')
                     print('………')
@@ -227,11 +227,11 @@ def main():
                             print('\n')
                         else:
                             print('\n')
-                            print("You dont seem to have any contacts saved yet")
+                            print("We cant find the credential....it seems you have no credentials available")
                             print('\n')
 
                     elif shortCode == 'dl':
-                        print("Enter name of account to delete")
+                        print("Enter name of account to be deleted")
                         search_credentials = input()
                         if check_existing_credentials(search_credentials):
                             print("Please wait ...")
@@ -242,7 +242,7 @@ def main():
                                 f"Account {verify_account.username}deleted successfully")
                         else:
                             print('\n')
-                            print("dlfailed")
+                            print("delete failed")
 
                     elif shortCode == 'ex':
                         break
