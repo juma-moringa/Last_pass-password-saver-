@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
+from credentials import Credentials
 from user import User
-
+          #####USER#######
 def create_user(username, password):
     '''
     Function to create a new user
@@ -19,15 +20,42 @@ def check_existing_user(username, password):
     '''
     return User.user_exist(username, password)
 
-# def main():
-#     print('''
-#     Hello user, welcome to LASTPASS where we help you remember your credentials
-#     ''') 
-#     print("Please enter your Username:") 
-#     username = input()
 
-#     print("Please enter your Password:") 
-#     password =input()
+         ######CREDENTIALS##########
+
+def create_credentials(account, username,password):
+    '''
+    Function to create a new credentials
+    '''
+    new_credentials = Credentials(account, username, password)
+    return new_credentials
+
+def save_credentials(credentials):
+    '''
+    Function to save credentials
+    '''
+    credentials.save_credentials()
+
+def delete_credentials(credentials):
+    '''
+    Function to delete a credentials
+    '''
+    credentials.delete_credentials() 
+
+def find_credentials(username):
+    '''
+    Function that finds a credential by username and returns the credential
+    '''
+    return Credentials.find_by_username(username)  
+
+def display_credentials():
+    '''
+    Function that returns all the saved credentials
+    '''
+    return Credentials.display_credentials()    
+
+
+
 
 def main():    
     print("""
