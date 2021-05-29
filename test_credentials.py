@@ -81,6 +81,20 @@ class TestCredentials(unittest.TestCase):
 
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_file)
 
+       #test7
+    def test_exist_credentials(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the contact.
+        '''
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("POA INTERNET","Jayarlanie","qwertyuiop") # new crederedentials
+        test_credentials.save_credentials()
+
+        credentials_exists = Credentials.credentials_exist("POA INTERNET","Jayarlanie","qwertyuiop")
+
+        self.assertTrue(credentials_exists) 
+
       #test7 will get back to it later
     # def test_copy_credentials(self):
     #     '''
