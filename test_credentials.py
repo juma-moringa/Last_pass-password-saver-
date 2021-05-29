@@ -28,6 +28,21 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials.save_credentials() # saving the new contact
         self.assertEqual(len(Credentials.credentials_file),1)
 
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            Credentials.credentials_file = []
+            
+    def test_save_multiple_credentials(self):
+            '''
+            test_save_multiple_credentials to check if we can save multiple credential
+            objects to our credentialredentials
+            '''
+            self.new_credentials.save_credentials()
+            test_credentials = Credentials("POA INTERNET","Jayarlanie","qwertyuiop") # new contact
+            test_credentials.save_credentials()
+            self.assertEqual(len(Credentials.credentials_file),2)
 
 if __name__ == '__main__':
     unittest.main()    
