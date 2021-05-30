@@ -60,7 +60,7 @@ class TestCredentials(unittest.TestCase):
             self.assertEqual(len(Credentials.credentials_file),1)
 
         #test5
-    def test_find_credentials_by_username(self):
+    def test_find_credentials_by_account(self):
         '''
         test to check if we can find a credential usredentials and display information
         '''
@@ -69,9 +69,9 @@ class TestCredentials(unittest.TestCase):
         test_credentials = Credentials("POA INTERNET","Jayarlanie","qwertyuiop") # new credential
         test_credentials.save_credentials()
 
-        found_credentials = Credentials.find_by_username("Jayarlanie")
+        found_credentials = Credentials.find_by_account("POA INTERNET")
 
-        self.assertEqual(found_credentials.password,test_credentials.password)
+        self.assertEqual(found_credentials.username,test_credentials.username)
 
         #test6
     def test_display_all_credentials(self):
@@ -95,20 +95,7 @@ class TestCredentials(unittest.TestCase):
 
         self.assertTrue(credentials_exists) 
 
-      #test7 will get back to it later
-    # def test_copy_credentials(self):
-    #     '''
-    #     Test to confirm that we are copying the email address from a found credential
-    #     '''
-
-    #     self.new_credentials.save_credentials()
-    #     Credentials.username("Ajaylee254")
-    #     Credentials.password("jay254")
-        
-
-    #     self.assertEqual(self.new_credentials.username,pyperclip.paste())
-    #     self.assertEqual(self.new_credentials.password,pyperclip.paste())
-
+    
 
 if __name__ == '__main__':
     unittest.main()    

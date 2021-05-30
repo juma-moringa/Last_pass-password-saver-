@@ -66,15 +66,19 @@ def display_credentials():
     return Credentials.display_credentials()
 
 
-def check_existing_credentials(username):
+def check_existing_credentials(account):
     '''
     Function that check if an account exists with the account_name and returns a Boolean
     '''
-    return Credentials.credentials_exist(username)
+    return Credentials.credentials_exist(account,account)
 
 
 def main():
-    print("Hello, Welcome to FUTURE SAVER!. Create an account to save your passwords.")
+    print("""
+    Hello, Welcome to LAST-PASS!.
+    Create an account to save your passwords.
+    Here we keep track of your credentials and also help you remember your credentials.
+    """)
     while True:
         print('\n')
         print('-'*10)
@@ -118,11 +122,11 @@ def main():
                     save_user(create_user(username, password))
                     print(
                         f'Congratulations , New Account has been created for: {username} using password: {password}')
-                    print("Proceed to login")
-                    print("username")
-                    entered_username = input()
-                    print("your password")
-                    entered_password = input()
+                    # print("Proceed to login")
+                    # print("username")
+                    # entered_username = input()
+                    # print("your password")
+                    # entered_password = input()
 
         elif shortCode == 'lg':
             print('Enter your username: ')
@@ -134,7 +138,7 @@ def main():
             print('Login success! \n')
             print('\n')
 
-            while entered_username != username or entered_password != password:
+            while username != username or password != password:
                 print("Missmatch on  username or password")
                 print('username')
                 entered_username = input()
@@ -144,7 +148,7 @@ def main():
 
                 print(
                     f'''
-                    Welcome back  {entered_username}. 
+                    Welcome back  {username}. 
                     Confirmation done successfully.
 
                     ''')
@@ -232,14 +236,14 @@ def main():
 
                     elif shortCode == 'dl':
                         print("Enter name of account to be deleted")
-                        search_credentials = input()
-                        if check_existing_credentials(search_credentials):
+                        account = input()
+                        if check_existing_credentials(account):
                             print("Please wait ...")
-                            verify_account = find_credentials(
-                                search_credentials)
-                            delete_credentials(verify_account)
+                            credentials = find_credentials(
+                                username)
+                            delete_credentials(credentials)
                             print(
-                                f"Account {verify_account.username}deleted successfully")
+                                f"Account {username.account}deleted successfully")
                         else:
                             print('\n')
                             print("delete failed")
@@ -249,7 +253,9 @@ def main():
 
                     else:
                      print('Invalid credentials short code')
-
+        elif shortCode == 'ex':
+            print("bye thank you for choosing last-pass")
+            break
 
 if __name__ == '__main__':
     main()

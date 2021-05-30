@@ -5,6 +5,7 @@ class Credentials:
     '''
 
     credentials_file=[]
+    
     def __init__(self,account,username, password):
         '''
         method that helps us define properties for our objects.
@@ -32,18 +33,18 @@ class Credentials:
         Credentials.credentials_file.remove(self)  
 
     @classmethod
-    def find_by_username(cls, username):
+    def find_by_account(cls, account):
         '''
-        Method that takes in a number and returns a contact that matches that number.
+        Method that takes in a account name and returns a credentials that matches that account.
 
         Args:
-            number: Phone number to search for
+            account: account to search for
         Returns :
-            Contact of person that matches the number.
+            Credentials of account that matches the account.
         '''
 
         for credentials in cls.credentials_file:
-            if credentials.username == username:
+            if credentials.account == account:
                 return credentials
 
     @classmethod
@@ -53,7 +54,7 @@ class Credentials:
         '''
         return cls.credentials_file 
 
-    def credentials_exist(cls, username):
+    def credentials_exist(cls, account):
         '''
          Method that checks if a account exists from the credentials list.
         Args:
@@ -61,15 +62,11 @@ class Credentials:
         Returns :
             Boolean: True or false depending if the account exists
         '''
-        for account in cls.credentials_file:
-            if account.username == username:
+        for credentials in cls.credentials_file:
+            if credentials.account == account:
                 return True
 
         return False
    
 
-        #come back
-    # @classmethod
-    # def copy_credentials(cls,username,password):
-    #     credentials_found = Credentials.find_by_username(username, password)
-    #     pyperclip.copy(credentials_found.username, credentials_found.password)               
+     
