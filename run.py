@@ -52,11 +52,11 @@ def delete_credentials(credentials):
     credentials.delete_credentials()
 
 
-def find_credentials(username):
+def find_credentials(account):
     '''
     Function that finds a credential by username and returns the credential
     '''
-    return Credentials.find_by_username(username)
+    return Credentials.find_by_username(account)
 
 
 def display_credentials():
@@ -70,7 +70,7 @@ def check_existing_credentials(account):
     '''
     Function that check if an account exists with the account_name and returns a Boolean
     '''
-    return Credentials.credentials_exist(account,account)
+    return Credentials.credentials_exist(account)
 
 
 def main():
@@ -82,7 +82,12 @@ def main():
     while True:
         print('\n')
         print('-'*10)
-        print('Use these short codes to navigate : cu - create a new user, lg - login to your account, ex -exit the password locker')
+        print('''
+        Use these short codes to navigate :
+        cu - create a new user,
+        lg - login to your account,
+        ex -exit the password locker.
+           ''')
         print('-'*10)
 
         shortCode = input().lower()
@@ -122,12 +127,7 @@ def main():
                     save_user(create_user(username, password))
                     print(
                         f'Congratulations , New Account has been created for: {username} using password: {password}')
-                    # print("Proceed to login")
-                    # print("username")
-                    # entered_username = input()
-                    # print("your password")
-                    # entered_password = input()
-
+                 
         elif shortCode == 'lg':
             print('Enter your username: ')
             defaultUserName = input()
@@ -162,10 +162,10 @@ def main():
                         ac - add credential,
                         lc - list credentials, 
                         dl - delete credential,
-                        ex - exit.
+                        ex - exit.(type ex TWICE to exit the application.)
 
                         ''')
-                    print('………')
+                    print('*'*10)
 
                     shortCode = input().lower()
                     if shortCode == 'ac':
@@ -174,11 +174,11 @@ def main():
                         print('----------')
                         print('Enter account to save credentials for: ')
                         credAccount = input()
-                        print('…')
+                        print('*'*20)
 
                         print('Enter username: ')
                         credUserName = input()
-                        print('…')
+                        print('*'*20)
 
                         passResponse = input(
                             'Do you want a generated password? \n  Respond with \'y\' for YES or \'n\' for NO: ').lower()
@@ -239,11 +239,11 @@ def main():
                         account = input()
                         if check_existing_credentials(account):
                             print("Please wait ...")
-                            credentials = find_credentials(
-                                username)
-                            delete_credentials(credentials)
+                            account = find_credentials(
+                                account)
+                            delete_credentials(account)
                             print(
-                                f"Account {username.account}deleted successfully")
+                                f"Account {username.credentials}deleted successfully")
                         else:
                             print('\n')
                             print("delete failed")
