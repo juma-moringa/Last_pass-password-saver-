@@ -21,9 +21,12 @@ To access this project on your local files, you can clone it using these steps
 
 ## Running the application
 Follow the following simple steps to run the application
+  on your terminal run:
+
   $ chmod +x run.py
 
   then:
+  
   $ ./run.py
 
 ## How this application
