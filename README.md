@@ -22,7 +22,7 @@ To access this project on your local files, you can clone it using these steps
 ## Running the application
 Follow the following simple steps to run the application
   $ chmod +x run.py
-  
+
   then:
   $ ./run.py
 
@@ -30,6 +30,7 @@ Follow the following simple steps to run the application
 User first creates an account,confirm their credentials
 Then the user can now log-in  save and  also display thier details.
 Then the user can navigate through the application using the following shortcodes:
+
     #user
 1. cu - Create new user.
 1. lg - Log into your account.
