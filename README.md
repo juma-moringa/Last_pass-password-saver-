@@ -4,7 +4,7 @@
 Juma Allan
 ## Description
 
-Last-pass is a python application run on the terminal  which allows users create, update and manage thier credentials of their accounts such as username and passwords.
+Last-pass is a python application run on the terminal  which allows users create, update and manage their credentials of their accounts such as username and passwords.
 
 ### Prerequisites
 You need to have git installed
@@ -21,12 +21,12 @@ To access this project on your local files, you can clone it using these steps
 
 ## Running the application
 Follow the following simple steps to run the application
-  on your terminal run:
+  on your terminal :
 
   $ chmod +x run.py
 
   then:
-  
+
   $ ./run.py
 
 ## How this application
