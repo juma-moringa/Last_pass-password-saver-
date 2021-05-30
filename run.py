@@ -81,14 +81,14 @@ def main():
     """)
     while True:
         print('\n')
-        print('-'*10)
+        print('*-*'*20)
         print('''
         Use these short codes to navigate :
         cu - create a new user,
         lg - login to your account,
         ex -exit the password locker.
            ''')
-        print('-'*10)
+        print('*-*'*20)
 
         shortCode = input().lower()
 
@@ -148,13 +148,14 @@ def main():
 
                 print(
                     f'''
-                    Welcome back  {username}. 
+                    Welcome back {username}. 
                     Confirmation done successfully.
+                        ***@LAST-PASS***
 
                     ''')
 
                 while True:
-                    print('\n ………')
+                    print('\n')
                     print(
                         '''
 
@@ -165,13 +166,13 @@ def main():
                         ex - exit.(type ex TWICE to exit the application.)
 
                         ''')
-                    print('*'*10)
+                    print('*'*20)
 
                     shortCode = input().lower()
                     if shortCode == 'ac':
-                        print('----------')
+                        print('*'*20)
                         print('Save new credential...')
-                        print('----------')
+                        print('*'*20)
                         print('Enter account to save credentials for: ')
                         credAccount = input()
                         print('*'*20)
@@ -215,7 +216,10 @@ def main():
                                 save_credentials(create_credentials(
                                     credAccount, credUserName, credPass))
                                 print(
-                                    f'Congratulations your credentials for {credAccount} was successfully created!')
+                                    f'''
+                                    Congratulations {username},your credentials for {credAccount} was successfully created!.
+                                                              *****@LAST-PASS*****
+                                    ''')
                                 print('\n')
 
 
@@ -254,7 +258,13 @@ def main():
                     else:
                      print('Invalid credentials short code')
         elif shortCode == 'ex':
-            print("bye thank you for choosing last-pass")
+            print("""
+
+                 Bye thank you for choosing last-pass...
+                       ***@LAST-PASS***
+                       Jaycreations 2021
+
+            """)
             break
 
 if __name__ == '__main__':
