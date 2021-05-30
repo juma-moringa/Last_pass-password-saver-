@@ -20,4 +20,4 @@ To access this project on your local files, you can clone it using these steps
 1. Python
 
 ### License
-This project is under the  [MIT](LICENSE) license.
+This project is under the  [MIT](license) license.
