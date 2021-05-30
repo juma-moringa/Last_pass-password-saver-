@@ -29,7 +29,7 @@ Follow the following simple steps to run the application
 
   $ ./run.py
 
-## How this application
+## How this application works
 User first creates an account,confirm their credentials
 Then the user can now log-in  save and  also display thier details.
 Then the user can navigate through the application using the following shortcodes:
@@ -47,7 +47,7 @@ Then the user can navigate through the application using the following shortcode
 
 ### Technologies Used
 1. Git
-1. Python
+1. Python3.8
 
 ### License
 This project is under the  [MIT](license) license.
